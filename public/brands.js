@@ -60,6 +60,7 @@ const HOST_ALIASES = {
   "frakma-io.pages.dev": "frakma.io",
   "avirka-ai.pages.dev": "avirka.ai",
   "avrika-ai.pages.dev": "avrika.ai",
+  "warble-future-production.up.railway.app": "warblecloud.com",
 };
 
 function brandKeyFromHost(host) {

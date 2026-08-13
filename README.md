@@ -45,13 +45,17 @@ npm run db:migrate:local
 npm run dev
 ```
 
-## Deploy
+## Hosting
+
+Primary host is **Railway** (`warble-future` project). Fallback URL:
+
+https://warble-future-production.up.railway.app
 
 ```bash
-npm run db:migrate
-npm run deploy
-npm run deploy:pages
+railway up --yes --service warble-future
 ```
+
+Cloudflare is DNS only for these apex/www names (CNAME to `*.up.railway.app`). The six Cloudflare Pages projects and the `warble-future` Worker were removed.
 
 Leads land in the `warble-future-leads` D1 database. List recent rows:
 
