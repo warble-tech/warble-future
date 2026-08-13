@@ -15,11 +15,13 @@
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#page-home">Skip to content</a>
   <header class="site-header">
     <div class="wrap nav">
       <a class="brand" href="/" data-link>
         <img src="/favicon.svg" alt="" />
-        <span data-brand-short>WarbleCloud</span> <span>Product</span>
+        <span data-brand-short>WarbleCloud</span>
+        <span class="brand-mark">built peacefully</span>
       </a>
       <button class="menu-toggle" type="button" id="menu-toggle" aria-label="Open menu">Menu</button>
       <nav class="nav-links" id="nav-links">
@@ -34,32 +36,33 @@
 
   <main>
     <section id="page-home" class="page">
-      <div class="wrap hero">
-        <p class="wc-eyebrow"><span class="dot" aria-hidden="true"></span><span data-brand-name>WarbleCloud</span></p>
-        <p class="tagline" data-tagline>Enterprise software, built peacefully.</p>
-        <h1 data-hero-h1>Product company. AI-native by construction.</h1>
-        <p class="lede" data-brand-lede></p>
-        <p class="lede" data-hero-secondary></p>
-        <div class="announce">
-          <h2 data-announce-title>September is the release pipeline</h2>
-          <p data-announce-body></p>
-          <div class="partner-row" data-badges></div>
-        </div>
-        <div class="actions">
-          <a class="wc-btn wc-btn-primary" href="/contact" data-link data-cta>Talk to the product team</a>
-          <a class="wc-btn wc-btn-ghost" href="https://warbleoss.org" rel="noopener">Use Community Edition</a>
-        </div>
-
-        <div class="wc-carousel" id="home-carousel" aria-roledescription="carousel">
-          <div class="wc-carousel-track" data-carousel-track></div>
-          <div class="wc-carousel-nav">
-            <button type="button" class="wc-btn wc-btn-ghost wc-btn-sm" data-carousel-prev>Previous</button>
-            <div class="wc-carousel-dots" data-carousel-dots></div>
-            <button type="button" class="wc-btn wc-btn-ghost wc-btn-sm" data-carousel-next>Next</button>
+      <div class="hero">
+        <div class="wc-hero-glow" aria-hidden="true"></div>
+        <div class="wrap hero-inner">
+          <p class="wc-eyebrow"><span class="dot" aria-hidden="true"></span><span data-brand-name>WarbleCloud</span></p>
+          <p class="tagline" data-tagline>Enterprise software, built peacefully.</p>
+          <h1 data-hero-h1>Product company. AI-native by construction.</h1>
+          <p class="lede" data-brand-lede></p>
+          <p class="lede lede-soft" data-hero-secondary></p>
+          <div class="actions">
+            <a class="wc-btn wc-btn-primary" href="/contact" data-link data-cta>Talk to the product team</a>
+            <a class="wc-btn wc-btn-ghost" href="https://warbleoss.org" rel="noopener">Use Community Edition</a>
           </div>
+          <div class="announce">
+            <h2 data-announce-title>September is the release pipeline</h2>
+            <p data-announce-body></p>
+            <div class="partner-row" data-badges></div>
+          </div>
+          <div class="wc-carousel" id="home-carousel" aria-roledescription="carousel">
+            <div class="wc-carousel-track" data-carousel-track></div>
+            <div class="wc-carousel-nav">
+              <button type="button" class="wc-btn wc-btn-ghost wc-btn-sm" data-carousel-prev>Previous</button>
+              <div class="wc-carousel-dots" data-carousel-dots></div>
+              <button type="button" class="wc-btn wc-btn-ghost wc-btn-sm" data-carousel-next>Next</button>
+            </div>
+          </div>
+          <div class="wc-metric-grid" data-metrics></div>
         </div>
-
-        <div class="wc-metric-grid" data-metrics></div>
       </div>
     </section>
 
@@ -142,14 +145,22 @@
   </main>
 
   <footer class="site-footer">
-    <div class="wrap footer-row">
-      <div>© <span id="year"></span> <span data-brand-short>WarbleCloud</span>. <span data-tagline>Enterprise software, built peacefully.</span> Product company.</div>
-      <div>
-        <a href="https://warbleoss.org" rel="noopener">warbleoss.org</a>
-        ·
-        <a href="https://github.com/warble-tech/warble-army" rel="noopener">warble-army</a>
-        ·
-        <a href="mailto:contact@warblecloud.com">contact@warblecloud.com</a>
+    <div class="wrap">
+      <div class="family-strip">
+        <a href="https://warblecloud.ai">WarbleCloud AI · Reflexion-AI</a>
+        <a href="https://avirka.ai">Avirka · LLM / ML toolchain</a>
+        <a href="https://frakma.io">Frakma · ML GitOps</a>
+        <a href="https://warblelabs.io">Warble Labs · data & domain</a>
+      </div>
+      <div class="footer-row">
+        <div>© <span id="year"></span> <span data-brand-short>WarbleCloud</span>. <span data-tagline>Enterprise software, built peacefully.</span></div>
+        <div>
+          <a href="https://warbleoss.org" rel="noopener">warbleoss.org</a>
+          ·
+          <a href="https://github.com/warble-tech/warble-army" rel="noopener">warble-army</a>
+          ·
+          <a href="mailto:contact@warblecloud.com">contact@warblecloud.com</a>
+        </div>
       </div>
     </div>
   </footer>
