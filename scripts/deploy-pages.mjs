@@ -1,4 +1,4 @@
-import { copyFileSync } from "node:fs";
+import { copyFileSync, unlinkSync } from "node:fs";
 import { spawnSync } from "node:child_process";
 import path from "node:path";
 
@@ -26,4 +26,10 @@ for (const { project } of PAGES_TARGETS) {
   if (result.status !== 0) {
     process.exit(result.status ?? 1);
   }
+}
+
+try {
+  unlinkSync(path.resolve("public/_redirects"));
+} catch {
+  /* already absent */
 }
