@@ -6,12 +6,13 @@ const routes = {
 };
 
 function pageTitles() {
-  const name = window.__WARBLE_BRAND?.name || "WarbleCloud";
+  const brand = window.__WARBLE_BRAND;
+  const name = brand?.name || "WarbleCloud";
   return {
-    home: `${name} — Enterprise software, built peacefully.`,
-    products: `${name} — What you can run today`,
+    home: brand?.title || `${name} — Enterprise software, built peacefully.`,
+    products: `${name} — Products`,
     how: `${name} — How it works`,
-    contact: `${name} — September pipeline`,
+    contact: `${name} — Contact`,
   };
 }
 
@@ -61,6 +62,64 @@ document.getElementById("menu-toggle")?.addEventListener("click", () => {
 document.getElementById("year").textContent = String(new Date().getFullYear());
 show(pathOf(window.location.href));
 
+function initCarousel() {
+  const root = document.getElementById("home-carousel");
+  const track = root?.querySelector("[data-carousel-track]");
+  const dots = root?.querySelector("[data-carousel-dots]");
+  if (!root || !track) return;
+
+  const slides = [...track.children];
+  if (!slides.length) return;
+
+  let index = 0;
+  let timer = null;
+
+  if (dots) {
+    dots.innerHTML = slides
+      .map((_, i) => `<button type="button" class="wc-carousel-dot" aria-label="Slide ${i + 1}" data-to="${i}"></button>`)
+      .join("");
+  }
+
+  function go(next) {
+    index = (next + slides.length) % slides.length;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    dots?.querySelectorAll(".wc-carousel-dot").forEach((dot, i) => {
+      dot.classList.toggle("active", i === index);
+    });
+  }
+
+  function play() {
+    stop();
+    timer = window.setInterval(() => go(index + 1), 7000);
+  }
+
+  function stop() {
+    if (timer) window.clearInterval(timer);
+    timer = null;
+  }
+
+  root.querySelector("[data-carousel-prev]")?.addEventListener("click", () => {
+    go(index - 1);
+    play();
+  });
+  root.querySelector("[data-carousel-next]")?.addEventListener("click", () => {
+    go(index + 1);
+    play();
+  });
+  dots?.addEventListener("click", (event) => {
+    const to = event.target.closest("[data-to]")?.dataset.to;
+    if (to == null) return;
+    go(Number(to));
+    play();
+  });
+  root.addEventListener("mouseenter", stop);
+  root.addEventListener("mouseleave", play);
+  go(0);
+  play();
+}
+
+initCarousel();
+
 const form = document.getElementById("lead-form");
 const statusEl = document.getElementById("lead-status");
 const submitBtn = document.getElementById("lead-submit");
@@ -87,6 +146,8 @@ form?.addEventListener("submit", async (event) => {
       body: JSON.stringify({
         ...data,
         page: window.location.pathname,
+        host: window.location.hostname,
+        brand: window.__WARBLE_BRAND?.key || "",
       }),
     });
     const payload = await res.json().catch(() => ({}));
