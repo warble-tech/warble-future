@@ -2,7 +2,7 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "warble-future",
   "main": "src/index.js",
-  "compatibility_date": "2026-08-14",
+  "compatibility_date": "2026-08-13",
   "compatibility_flags": ["nodejs_compat"],
   "workers_dev": true,
   "preview_urls": true,
@@ -20,7 +20,7 @@
     {
       "binding": "DB",
       "database_name": "warble-future-leads",
-      "database_id": "PLACEHOLDER_D1_ID"
+      "database_id": "5e40e8e2-d20a-4b3f-b408-0f07f47d53d1"
     }
   ],
   "vars": {
