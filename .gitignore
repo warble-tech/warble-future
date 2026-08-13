@@ -3,6 +3,7 @@ node_modules/
 .wrangler-bundle.js
 .wrangler-bundle.b64
 .dev.vars
+public/_redirects
 .DS_Store
 *.log
 dist/

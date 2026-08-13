@@ -11,6 +11,15 @@ Public marketing SPA for the next chapter of the Warble stack, plus a `/api/lead
 
 ## Hosts
 
+Cloudflare Pages project descriptions (from the domain briefs):
+
+- `warblecloud-com` — WarbleCloud — cloud platform for real-time collaboration, AI-assisted workflows, and scalable infrastructure. Modern, developer-friendly SaaS.
+- `warblecloud-ai` — WarbleCloud AI — AI-powered cloud services focused on intelligent automation, generative tools, and smart infrastructure management.
+- `warblelabs-io` — Warble Labs — experimental R&D lab for AI, cloud, and emerging tech prototypes. Innovation and open experimentation hub.
+- `frakma-io` — Frakma — next-generation platform for modular digital products and decentralized applications. Clean, high-performance web presence.
+- `avirka-ai` — Avirka AI — AI-driven solutions for productivity, automation, and intelligent systems. Focused on practical, high-impact AI tools.
+- `avrika-ai` — Avrika AI — original AI brand and platform for intelligent applications and research-driven AI products.
+
 | Custom domain | Pages project | Default URL |
 |---|---|---|
 | https://warblecloud.com | `warblecloud-com` | https://warblecloud-com.pages.dev |

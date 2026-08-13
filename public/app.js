@@ -5,12 +5,15 @@ const routes = {
   "/contact": "contact",
 };
 
-const titles = {
-  home: "Warble Cloud — Next evolution. Platform on pause.",
-  products: "What you can run — Warble OSS + paused platform",
-  how: "How it works — Scan, observe, propose",
-  contact: "Stay in the loop — Warble Cloud",
-};
+function pageTitles() {
+  const name = window.__WARBLE_BRAND?.name || "WarbleCloud";
+  return {
+    home: `${name} — Next evolution. Platform on pause.`,
+    products: `${name} — What you can run today`,
+    how: `${name} — How it works`,
+    contact: `${name} — Stay in the loop`,
+  };
+}
 
 function pathOf(href) {
   const url = new URL(href, window.location.origin);
@@ -26,7 +29,7 @@ function show(path) {
 
   document.querySelectorAll(".page").forEach((el) => el.classList.remove("active"));
   document.getElementById(`page-${key}`)?.classList.add("active");
-  document.title = titles[key];
+  document.title = pageTitles()[key];
   document.querySelectorAll("[data-nav]").forEach((el) => {
     el.classList.toggle("active", el.dataset.nav === key);
   });
