@@ -1,4 +1,11 @@
+import { copyFileSync } from "node:fs";
 import { spawnSync } from "node:child_process";
+import path from "node:path";
+
+copyFileSync(
+  path.resolve("pages/_redirects"),
+  path.resolve("public/_redirects"),
+);
 
 export const PAGES_TARGETS = [
   { project: "warblecloud-com", domain: "warblecloud.com" },
