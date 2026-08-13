@@ -1,3 +1,4 @@
+const TAGLINE = "Enterprise software, built peacefully.";
 const FAMILY =
   "Family of modern AI & cloud platforms (WarbleCloud, Warble Labs, Frakma, Avirka/Avrika) delivering intelligent automation, collaboration tools, and next-gen digital products.";
 
@@ -102,8 +103,11 @@ function applyBrand() {
   document.querySelectorAll("[data-family-brief]").forEach((el) => {
     el.textContent = FAMILY;
   });
+  document.querySelectorAll("[data-tagline]").forEach((el) => {
+    el.textContent = TAGLINE;
+  });
 
-  window.__WARBLE_BRAND = { key, ...brand, family: FAMILY };
+  window.__WARBLE_BRAND = { key, ...brand, family: FAMILY, tagline: TAGLINE };
 }
 
 applyBrand();

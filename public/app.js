@@ -8,10 +8,10 @@ const routes = {
 function pageTitles() {
   const name = window.__WARBLE_BRAND?.name || "WarbleCloud";
   return {
-    home: `${name} — Next evolution. Platform on pause.`,
+    home: `${name} — Enterprise software, built peacefully.`,
     products: `${name} — What you can run today`,
     how: `${name} — How it works`,
-    contact: `${name} — Stay in the loop`,
+    contact: `${name} — September pipeline`,
   };
 }
 
