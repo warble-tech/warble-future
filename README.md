@@ -11,16 +11,21 @@ Public marketing SPA for the next chapter of the Warble stack, plus a `/api/lead
 
 ## Hosts
 
-Same Worker is attached to:
+| Custom domain | Pages project | Default URL |
+|---|---|---|
+| https://warblecloud.com | `warblecloud-com` | https://warblecloud-com.pages.dev |
+| https://warblecloud.ai | `warblecloud-ai` | https://warblecloud-ai.pages.dev |
+| https://warblelabs.io | `warblelabs-io` | https://warblelabs-io.pages.dev |
+| https://frakma.io | `frakma-io` | https://frakma-io.pages.dev |
+| https://avirka.ai | `avirka-ai` | https://avirka-ai.pages.dev |
+| https://avrika.ai | `avrika-ai` | https://avrika-ai.pages.dev |
 
-- `https://future.warblecloud.com`
-- `https://future.warblecloud.ai`
-- `https://future.warblelabs.io`
-- `https://future.avirka.ai`
-- `https://future.frakma.io`
-- `https://future.warbleoss.org`
+`www` is attached on each domain that is already in this Cloudflare account.
 
-Apex sites are left untouched.
+Also still on the Worker:
+
+- https://future.warblecloud.com
+- https://warble-future.avinash-etrx.workers.dev
 
 ## Local
 
@@ -36,6 +41,7 @@ npm run dev
 ```bash
 npm run db:migrate
 npm run deploy
+npm run deploy:pages
 ```
 
 Leads land in the `warble-future-leads` D1 database. List recent rows:
