@@ -6,10 +6,10 @@ const routes = {
 };
 
 const titles = {
-  home: "Warble — Open-source Kubernetes agent ops",
-  products: "Products — Warble OSS + private beta",
+  home: "Warble Cloud — Next evolution. Platform on pause.",
+  products: "What you can run — Warble OSS + paused platform",
   how: "How it works — Scan, observe, propose",
-  contact: "Request private beta — Warble",
+  contact: "Stay in the loop — Warble Cloud",
 };
 
 function pathOf(href) {

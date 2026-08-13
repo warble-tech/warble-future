@@ -125,7 +125,46 @@ button, input, select, textarea { font: inherit; }
 }
 
 .hero {
-  padding: 88px 0 56px;
+  padding: 56px 0 56px;
+}
+
+.announce {
+  margin: 28px 0 0;
+  padding: 22px 24px;
+  border: 1px solid rgba(20, 184, 166, 0.35);
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(20, 184, 166, 0.08), rgba(17, 24, 39, 0.7));
+}
+
+.announce h2 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.announce p {
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+.announce p:last-child { margin-bottom: 0; }
+
+.partner-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0 0;
+}
+
+.partner {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(11, 15, 20, 0.6);
+  color: var(--text);
+  font-size: 0.82rem;
+  font-weight: 500;
 }
 
 .eyebrow {
