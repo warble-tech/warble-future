@@ -1,0 +1,37 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "warble-future",
+  "main": "src/index.js",
+  "compatibility_date": "2026-08-14",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "preview_urls": true,
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "warble-future-leads",
+      "database_id": "PLACEHOLDER_D1_ID"
+    }
+  ],
+  "vars": {
+    "NOTIFY_EMAIL": "contact@warblecloud.com"
+  },
+  "routes": [
+    { "pattern": "future.warblecloud.com", "custom_domain": true },
+    { "pattern": "future.warblecloud.ai", "custom_domain": true },
+    { "pattern": "future.warblelabs.io", "custom_domain": true },
+    { "pattern": "future.avirka.ai", "custom_domain": true },
+    { "pattern": "future.frakma.io", "custom_domain": true },
+    { "pattern": "future.warbleoss.org", "custom_domain": true }
+  ]
+}

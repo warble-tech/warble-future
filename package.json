@@ -1,0 +1,17 @@
+{
+  "name": "warble-future",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Warble Future marketing SPA and lead capture API",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "types": "wrangler types",
+    "db:migrate:local": "wrangler d1 execute warble-future-leads --local --file=./schema.sql",
+    "db:migrate": "wrangler d1 execute warble-future-leads --remote --file=./schema.sql",
+    "db:leads": "wrangler d1 execute warble-future-leads --remote --command \"SELECT id, name, email, company, interest, created_at FROM leads ORDER BY created_at DESC LIMIT 50\""
+  },
+  "devDependencies": {
+    "wrangler": "^4.28.0"
+  }
+}
