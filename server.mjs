@@ -68,10 +68,21 @@ const fileDb = {
   },
 };
 
+const MAX_BODY_BYTES = 16 * 1024;
+
 function requestBody(req) {
   return new Promise((resolve, reject) => {
     const chunks = [];
-    req.on("data", (c) => chunks.push(c));
+    let size = 0;
+    req.on("data", (c) => {
+      size += c.length;
+      if (size > MAX_BODY_BYTES) {
+        reject(new Error("payload_too_large"));
+        req.destroy();
+        return;
+      }
+      chunks.push(c);
+    });
     req.on("end", () => resolve(Buffer.concat(chunks)));
     req.on("error", reject);
   });
@@ -138,7 +149,16 @@ const server = createServer(async (req, res) => {
         await sendWebResponse(res, json({ ok: false, error: "Method not allowed." }, 405));
         return;
       }
-      const body = await requestBody(req);
+      let body;
+      try {
+        body = await requestBody(req);
+      } catch (err) {
+        if (String(err.message) === "payload_too_large") {
+          await sendWebResponse(res, json({ ok: false, error: "Request too large." }, 413));
+          return;
+        }
+        throw err;
+      }
       const webReq = toWebRequest(req, body);
       const env = { DB: fileDb, NOTIFY_EMAIL: process.env.NOTIFY_EMAIL || "contact@warblecloud.com" };
       const ctx = { waitUntil: (p) => Promise.resolve(p).catch(() => {}) };

@@ -2,6 +2,22 @@ import { CORS_HEADERS, handleLead, json } from "./leads.js";
 
 export default {
   async fetch(request, env, ctx) {
+    try {
+      return await route(request, env, ctx);
+    } catch (error) {
+      console.error(
+        JSON.stringify({
+          message: "unhandled error",
+          error: error instanceof Error ? error.message : String(error),
+          path: new URL(request.url).pathname,
+        }),
+      );
+      return json({ ok: false, error: "Internal server error." }, 500);
+    }
+  },
+};
+
+async function route(request, env, ctx) {
     const url = new URL(request.url);
 
     if (url.pathname === "/api/leads") {

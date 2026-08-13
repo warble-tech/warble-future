@@ -11,6 +11,7 @@ const MAX_ROLE = 120;
 const MAX_MESSAGE = 2000;
 const RATE_WINDOW_MS = 10 * 60 * 1000;
 const RATE_LIMIT = 5;
+const MAX_BODY_BYTES = 16 * 1024;
 
 export function json(data, status = 200) {
   return new Response(JSON.stringify(data), {
@@ -23,9 +24,18 @@ export function json(data, status = 200) {
 }
 
 export async function handleLead(request, env, ctx) {
+  const declared = Number(request.headers.get("Content-Length") || 0);
+  if (declared > MAX_BODY_BYTES) {
+    return json({ ok: false, error: "Request too large." }, 413);
+  }
+
   let body;
   try {
-    body = await request.json();
+    const raw = await request.arrayBuffer();
+    if (raw.byteLength > MAX_BODY_BYTES) {
+      return json({ ok: false, error: "Request too large." }, 413);
+    }
+    body = JSON.parse(new TextDecoder().decode(raw));
   } catch {
     return json({ ok: false, error: "Send a JSON body." }, 400);
   }
@@ -49,7 +59,10 @@ export async function handleLead(request, env, ctx) {
     return json({ ok: false, error: "Please enter a valid work email." }, 400);
   }
 
-  const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+  const ip =
+    request.headers.get("CF-Connecting-IP") ||
+    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+    "unknown";
   const ipHash = await sha256(ip);
   const now = new Date();
   const windowStart = new Date(now.getTime() - RATE_WINDOW_MS).toISOString();
@@ -94,7 +107,7 @@ export async function handleLead(request, env, ctx) {
 
     return json({ ok: true, id });
   } catch (err) {
-    console.log(JSON.stringify({ event: "lead_error", error: String(err) }));
+    console.error(JSON.stringify({ event: "lead_error", error: String(err) }));
     return json({ ok: false, error: "Could not save your request. Please email contact@warblecloud.com." }, 500);
   }
 }
@@ -125,7 +138,7 @@ async function notifyLead(env, lead) {
       html: `<pre style="font-family:ui-sans-serif,system-ui">${escapeHtml(text)}</pre>`,
     });
   } catch (err) {
-    console.log(JSON.stringify({ event: "lead_notify_failed", error: String(err) }));
+    console.error(JSON.stringify({ event: "lead_notify_failed", error: String(err) }));
   }
 }
 

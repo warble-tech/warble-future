@@ -8,7 +8,8 @@
   "preview_urls": true,
   "observability": {
     "enabled": true,
-    "head_sampling_rate": 1
+    "logs": { "head_sampling_rate": 1 },
+    "traces": { "enabled": true, "head_sampling_rate": 0.01 }
   },
   "assets": {
     "directory": "./public",
@@ -25,13 +26,5 @@
   ],
   "vars": {
     "NOTIFY_EMAIL": "contact@warblecloud.com"
-  },
-  "routes": [
-    { "pattern": "future.warblecloud.com", "custom_domain": true },
-    { "pattern": "future.warblecloud.ai", "custom_domain": true },
-    { "pattern": "future.warblelabs.io", "custom_domain": true },
-    { "pattern": "future.avirka.ai", "custom_domain": true },
-    { "pattern": "future.frakma.io", "custom_domain": true },
-    { "pattern": "future.warbleoss.org", "custom_domain": true }
-  ]
+  }
 }
