@@ -11,11 +11,10 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-  <div class="hero-glow" aria-hidden="true"></div>
   <header class="site-header">
     <div class="wrap nav">
       <a class="brand" href="/" data-link>
@@ -28,7 +27,7 @@
         <a href="/products" data-link data-nav="products">Products</a>
         <a href="/how-it-works" data-link data-nav="how">How it works</a>
         <a href="/contact" data-link data-nav="contact">September</a>
-        <a class="btn btn-primary" href="/contact" data-link>Join the September pipeline</a>
+        <a class="wc-btn wc-btn-primary wc-btn-sm" href="/contact" data-link>Join the September pipeline</a>
       </nav>
     </div>
   </header>
@@ -36,7 +35,7 @@
   <main>
     <section id="page-home" class="page">
       <div class="wrap hero">
-        <p class="eyebrow"><span data-brand-name>WarbleCloud</span></p>
+        <p class="wc-eyebrow"><span class="dot" aria-hidden="true"></span><span data-brand-name>WarbleCloud</span></p>
         <p class="tagline" data-tagline>Enterprise software, built peacefully.</p>
         <h1>Methodical by design. First pipeline in September.</h1>
         <p class="lede" data-brand-lede>
@@ -59,19 +58,28 @@
             Enterprise seats remain private beta until that pipeline opens.
           </p>
           <div class="partner-row">
-            <span class="partner">Linux Foundation · widening</span>
-            <span class="partner">Agentic AI Foundation · widening</span>
-            <span class="partner">Release pipeline · September</span>
+            <span class="wc-badge wc-badge-violet">Linux Foundation · widening</span>
+            <span class="wc-badge wc-badge-violet">Agentic AI Foundation · widening</span>
+            <span class="wc-badge wc-badge-ink">Release pipeline · September</span>
           </div>
         </div>
-        <div class="actions" style="margin-top:28px">
-          <a class="btn btn-primary" href="/contact" data-link>Join the September pipeline</a>
-          <a class="btn btn-ghost" href="https://warbleoss.org" rel="noopener">Use Community Edition</a>
+        <div class="actions">
+          <a class="wc-btn wc-btn-primary" href="/contact" data-link>Join the September pipeline</a>
+          <a class="wc-btn wc-btn-ghost" href="https://warbleoss.org" rel="noopener">Use Community Edition</a>
         </div>
-        <div class="stats">
-          <div class="stat"><strong>Peaceful</strong><span>Enterprise software, built methodically. No theater.</span></div>
-          <div class="stat"><strong>Widening</strong><span>Deeper work with LF and AAIF. Membership, not over-claim.</span></div>
-          <div class="stat"><strong>September</strong><span>First release pipeline. CE stays available now.</span></div>
+        <div class="wc-metric-grid">
+          <div class="wc-metric-card">
+            <div class="wc-metric-value">Peaceful</div>
+            <div class="wc-metric-label">Enterprise software, built methodically. No theater.</div>
+          </div>
+          <div class="wc-metric-card">
+            <div class="wc-metric-value">Widening</div>
+            <div class="wc-metric-label">Deeper work with LF and AAIF. Membership, not over-claim.</div>
+          </div>
+          <div class="wc-metric-card">
+            <div class="wc-metric-value">September</div>
+            <div class="wc-metric-label">First release pipeline. CE stays available now.</div>
+          </div>
         </div>
       </div>
     </section>
@@ -79,30 +87,33 @@
     <section id="page-products" class="page">
       <div class="wrap section">
         <div class="section-head">
-          <p class="eyebrow">Open flock</p>
+          <p class="wc-section-label">Open flock</p>
           <h2>What you can run today</h2>
           <p data-brand-brief>WarbleCloud — cloud platform for real-time collaboration, AI-assisted workflows, and scalable infrastructure. Modern, developer-friendly SaaS.</p>
           <p>While the commercial MLOps / LLMOps platform is paused, the public flock on <a href="https://warbleoss.org">warbleoss.org</a> is unchanged: same names, license, and install path.</p>
           <p class="form-note" data-family-brief></p>
         </div>
-        <div class="grid grid-3">
-          <article class="card">
-            <div class="pill">Apache-2.0</div>
-            <h3>ShrikeOps</h3>
-            <p>Hunts misconfigurations, CVEs, and deprecated APIs. Impales findings on a scored report before they hit production.</p>
-            <a class="ext" href="https://github.com/warble-tech/shrikeops" rel="noopener">github.com/warble-tech/shrikeops</a>
+        <div class="wc-engines-grid">
+          <article class="wc-engine-card">
+            <div class="wc-engine-tag">Apache-2.0</div>
+            <h3 class="wc-engine-title">ShrikeOps</h3>
+            <div class="wc-engine-line"></div>
+            <p class="wc-engine-body">Hunts misconfigurations, CVEs, and deprecated APIs. Impales findings on a scored report before they hit production.</p>
+            <a class="wc-engine-stat" href="https://github.com/warble-tech/shrikeops" rel="noopener">github.com/warble-tech/shrikeops</a>
           </article>
-          <article class="card">
-            <div class="pill">Apache-2.0</div>
-            <h3>Heron Ops</h3>
-            <p>Kubernetes MCP server for live pods, logs, events, and metrics. Calm observation, precise tools for any agent IDE.</p>
-            <a class="ext" href="https://github.com/warble-tech/heron-ops" rel="noopener">github.com/warble-tech/heron-ops</a>
+          <article class="wc-engine-card">
+            <div class="wc-engine-tag">Apache-2.0</div>
+            <h3 class="wc-engine-title">Heron Ops</h3>
+            <div class="wc-engine-line"></div>
+            <p class="wc-engine-body">Kubernetes MCP server for live pods, logs, events, and metrics. Calm observation, precise tools for any agent IDE.</p>
+            <a class="wc-engine-stat" href="https://github.com/warble-tech/heron-ops" rel="noopener">github.com/warble-tech/heron-ops</a>
           </article>
-          <article class="card">
-            <div class="pill">Community Edition</div>
-            <h3>Starling EX Community</h3>
-            <p>Self-host package: Starling Lite facade + Heron Ops + ShrikeOps, one Helm chart. Planned CNCF donation — not a CNCF project until accepted.</p>
-            <a class="ext" href="https://github.com/warble-tech/warble-army" rel="noopener">github.com/warble-tech/warble-army</a>
+          <article class="wc-engine-card">
+            <div class="wc-engine-tag">Community Edition</div>
+            <h3 class="wc-engine-title">Starling EX Community</h3>
+            <div class="wc-engine-line"></div>
+            <p class="wc-engine-body">Self-host package: Starling Lite facade + Heron Ops + ShrikeOps, one Helm chart. Planned CNCF donation — not a CNCF project until accepted.</p>
+            <a class="wc-engine-stat" href="https://github.com/warble-tech/warble-army" rel="noopener">github.com/warble-tech/warble-army</a>
           </article>
         </div>
         <p class="note-box">
@@ -113,31 +124,35 @@
 
       <div class="wrap section" style="padding-top:0">
         <div class="section-head">
-          <p class="eyebrow">Closed</p>
+          <p class="wc-section-label">Closed</p>
           <h2>Enterprise versions — private beta</h2>
           <p>The current managed MLOps / LLMOps platform is paused. Seats, if any, are invite-only private beta while we evaluate the next core product.</p>
         </div>
-        <div class="grid">
-          <article class="card card-locked">
-            <div class="pill pill-warn">Private beta</div>
-            <h3>Warble Cloud</h3>
-            <p>Multi-tenant control plane, billing, and the managed flock. We run it so you do not have to operate CE yourself.</p>
+        <div class="wc-engines-grid cols-2">
+          <article class="wc-engine-card">
+            <span class="wc-badge wc-badge-amber">Private beta</span>
+            <h3 class="wc-engine-title">Warble Cloud</h3>
+            <div class="wc-engine-line"></div>
+            <p class="wc-engine-body">Multi-tenant control plane, billing, and the managed flock. We run it so you do not have to operate CE yourself.</p>
           </article>
-          <article class="card card-locked">
-            <div class="pill pill-warn">Private beta</div>
-            <h3>Managed FRAKMA</h3>
-            <p>The current managed platform is on a brief pause pending evaluation. Separate story from Starling EX Community. Silver Partner of LF / AAIF — not an LF-hosted project.</p>
+          <article class="wc-engine-card">
+            <span class="wc-badge wc-badge-amber">Private beta</span>
+            <h3 class="wc-engine-title">Managed FRAKMA</h3>
+            <div class="wc-engine-line"></div>
+            <p class="wc-engine-body">The current managed platform is on a brief pause pending evaluation. Separate story from Starling EX Community. Silver Partner of LF / AAIF — not an LF-hosted project.</p>
           </article>
-          <article class="card card-locked">
-            <div class="pill pill-warn">Private beta</div>
-            <h3>Phronix + GitHub App</h3>
-            <p>Private model / SLA add-on and GitHub App distribution. Same commercial boundary as warbleoss.org: CE stays free and self-hosted.</p>
+          <article class="wc-engine-card">
+            <span class="wc-badge wc-badge-amber">Private beta</span>
+            <h3 class="wc-engine-title">Phronix + GitHub App</h3>
+            <div class="wc-engine-line"></div>
+            <p class="wc-engine-body">Private model / SLA add-on and GitHub App distribution. Same commercial boundary as warbleoss.org: CE stays free and self-hosted.</p>
           </article>
-          <article class="card card-locked">
-            <div class="pill pill-warn">Request access</div>
-            <h3>Want in?</h3>
-            <p>Tell us cluster, constraint, and whether you need managed flock or managed platform. We reply if there is a beta seat.</p>
-            <a class="ext" href="/contact" data-link>Request private beta →</a>
+          <article class="wc-engine-card">
+            <span class="wc-badge wc-badge-violet">Request access</span>
+            <h3 class="wc-engine-title">Want in?</h3>
+            <div class="wc-engine-line"></div>
+            <p class="wc-engine-body">Tell us cluster, constraint, and whether you need managed flock or managed platform. We reply if there is a beta seat.</p>
+            <a class="wc-engine-stat" href="/contact" data-link>Request private beta →</a>
           </article>
         </div>
       </div>
@@ -146,7 +161,7 @@
     <section id="page-how" class="page">
       <div class="wrap section">
         <div class="section-head">
-          <p class="eyebrow">How it works</p>
+          <p class="wc-section-label">How it works</p>
           <h2>Scan. Observe. Propose. Apply only inside policy.</h2>
           <p>Community Edition is the path you can run now. The commercial platform is paused so the next core product can be evaluated against open-source and agentic AI standards.</p>
         </div>
@@ -187,7 +202,7 @@
       <div class="wrap section">
         <div class="contact-layout">
           <div>
-            <p class="eyebrow">September pipeline</p>
+            <p class="wc-section-label">September pipeline</p>
             <h2>Stay close to the methodical release.</h2>
             <p class="lede">Tell us if you want September pipeline notes, a private-beta seat, or CE help. Community Edition does not wait on this form.</p>
             <p class="form-note">OSS install: <a href="https://warbleoss.org">warbleoss.org</a>. Email: <a href="mailto:contact@warblecloud.com">contact@warblecloud.com</a>.</p>
@@ -195,24 +210,24 @@
           <form class="form" id="lead-form" novalidate>
             <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" />
             <div class="field">
-              <label for="name">Name</label>
-              <input id="name" name="name" required maxlength="120" autocomplete="name" />
+              <label class="wc-input-label" for="name">Name</label>
+              <input class="wc-input" id="name" name="name" required maxlength="120" autocomplete="name" />
             </div>
             <div class="field">
-              <label for="email">Work email</label>
-              <input id="email" name="email" type="email" required maxlength="254" autocomplete="email" />
+              <label class="wc-input-label" for="email">Work email</label>
+              <input class="wc-input" id="email" name="email" type="email" required maxlength="254" autocomplete="email" />
             </div>
             <div class="field">
-              <label for="company">Company</label>
-              <input id="company" name="company" maxlength="160" autocomplete="organization" />
+              <label class="wc-input-label" for="company">Company</label>
+              <input class="wc-input" id="company" name="company" maxlength="160" autocomplete="organization" />
             </div>
             <div class="field">
-              <label for="role">Role</label>
-              <input id="role" name="role" maxlength="120" placeholder="SRE, platform, CTO…" />
+              <label class="wc-input-label" for="role">Role</label>
+              <input class="wc-input" id="role" name="role" maxlength="120" placeholder="SRE, platform, CTO…" />
             </div>
             <div class="field">
-              <label for="interest">What do you want?</label>
-              <select id="interest" name="interest">
+              <label class="wc-input-label" for="interest">What do you want?</label>
+              <select class="wc-input" id="interest" name="interest">
                 <option value="september-pipeline">September release pipeline updates</option>
                 <option value="private-beta">Private beta — enterprise, when it opens</option>
                 <option value="starling-ex-ce">Starling EX Community (self-host)</option>
@@ -224,10 +239,10 @@
               </select>
             </div>
             <div class="field">
-              <label for="message">Context (optional)</label>
-              <textarea id="message" name="message" maxlength="2000" placeholder="Cluster (kind / GKE / EKS / AKS), constraint, timeline…"></textarea>
+              <label class="wc-input-label" for="message">Context (optional)</label>
+              <textarea class="wc-input" id="message" name="message" maxlength="2000" placeholder="Cluster (kind / GKE / EKS / AKS), constraint, timeline…"></textarea>
             </div>
-            <button class="btn btn-primary" type="submit" id="lead-submit">Send request</button>
+            <button class="wc-btn wc-btn-primary" type="submit" id="lead-submit">Send request</button>
             <p class="form-status" id="lead-status" role="status" aria-live="polite"></p>
             <p class="form-note">We’ll only use this to respond to your request.</p>
           </form>
