@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Warble Future — Safe auto-remediation for operations</title>
-  <meta name="description" content="Warble Future is the next chapter of Warble Cloud: AI that observes, reasons, and acts inside your stack. Request more information." />
-  <meta property="og:title" content="Warble Future" />
-  <meta property="og:description" content="Infrastructure that fixes itself before you get paged. Request more information." />
+  <title>Warble — Open-source Kubernetes agent ops</title>
+  <meta name="description" content="Scan with ShrikeOps. Observe with Heron Ops. Coordinate with Starling EX Community. Enterprise Warble Cloud and managed FRAKMA are private beta." />
+  <meta property="og:title" content="Warble — Open-source Kubernetes agent ops" />
+  <meta property="og:description" content="Self-hosted flock: ShrikeOps, Heron Ops, Starling EX Community. Enterprise is private beta." />
   <meta property="og:type" content="website" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,15 +20,15 @@
     <div class="wrap nav">
       <a class="brand" href="/" data-link>
         <img src="/favicon.svg" alt="" />
-        Warble <span>Future</span>
+        Warble <span>OSS + private beta</span>
       </a>
       <button class="menu-toggle" type="button" id="menu-toggle" aria-label="Open menu">Menu</button>
       <nav class="nav-links" id="nav-links">
         <a href="/" data-link data-nav="home">Home</a>
         <a href="/products" data-link data-nav="products">Products</a>
         <a href="/how-it-works" data-link data-nav="how">How it works</a>
-        <a href="/contact" data-link data-nav="contact">Contact</a>
-        <a class="btn btn-primary" href="/contact" data-link>Request more info</a>
+        <a href="/contact" data-link data-nav="contact">Private beta</a>
+        <a class="btn btn-primary" href="/contact" data-link>Request beta access</a>
       </nav>
     </div>
   </header>
@@ -36,20 +36,20 @@
   <main>
     <section id="page-home" class="page">
       <div class="wrap hero">
-        <p class="eyebrow">Coming into focus</p>
-        <h1>Operations that fix themselves before you get paged.</h1>
+        <p class="eyebrow">Aligned with warbleoss.org</p>
+        <h1>Open-source Kubernetes agent ops. Enterprise is private beta.</h1>
         <p class="lede">
-          Warble Future is the next chapter of the Warble stack: observe, reason, and act
-          inside your environment — with human-in-the-loop guardrails and no lock-in.
+          Scan with ShrikeOps. Observe with Heron Ops. Coordinate with Starling EX Community.
+          Self-hosted, Apache-2.0, no phone-home. Managed Warble Cloud and FRAKMA Enterprise are closed for private beta.
         </p>
         <div class="actions">
-          <a class="btn btn-primary" href="/contact" data-link>Request more information</a>
-          <a class="btn btn-ghost" href="/how-it-works" data-link>See how it works</a>
+          <a class="btn btn-primary" href="https://warbleoss.org" rel="noopener">Use Community Edition</a>
+          <a class="btn btn-ghost" href="/contact" data-link>Request private beta</a>
         </div>
         <div class="stats">
-          <div class="stat"><strong>VPC-native</strong><span>Runs where your data already lives.</span></div>
-          <div class="stat"><strong>Open core</strong><span>Frakma and Avirka stay yours to self-host.</span></div>
-          <div class="stat"><strong>Human limits</strong><span>The AI proposes and acts only inside policy.</span></div>
+          <div class="stat"><strong>Complete CE</strong><span>Scan → observe → propose → optional guarded apply. No license check.</span></div>
+          <div class="stat"><strong>Two wings</strong><span>Starling EX toward CNCF. Frakma-X is the LF platform wing — we do not mix those stories.</span></div>
+          <div class="stat"><strong>Enterprise closed</strong><span>Multi-tenant SaaS, GitHub App, and managed FRAKMA are invite-only.</span></div>
         </div>
       </div>
     </section>
@@ -57,30 +57,63 @@
     <section id="page-products" class="page">
       <div class="wrap section">
         <div class="section-head">
-          <p class="eyebrow">The lineup</p>
-          <h2>Four pieces. One path from try to production.</h2>
-          <p>Start free. Let us run it. Add guarantees when the board asks for them.</p>
+          <p class="eyebrow">Open flock</p>
+          <h2>What you can run today</h2>
+          <p>The public product is the flock on <a href="https://warbleoss.org">warbleoss.org</a>. Same names, same license, same install path.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card">
+            <div class="pill">Apache-2.0</div>
+            <h3>ShrikeOps</h3>
+            <p>Hunts misconfigurations, CVEs, and deprecated APIs. Impales findings on a scored report before they hit production.</p>
+            <a class="ext" href="https://github.com/warble-tech/shrikeops" rel="noopener">github.com/warble-tech/shrikeops</a>
+          </article>
+          <article class="card">
+            <div class="pill">Apache-2.0</div>
+            <h3>Heron Ops</h3>
+            <p>Kubernetes MCP server for live pods, logs, events, and metrics. Calm observation, precise tools for any agent IDE.</p>
+            <a class="ext" href="https://github.com/warble-tech/heron-ops" rel="noopener">github.com/warble-tech/heron-ops</a>
+          </article>
+          <article class="card">
+            <div class="pill">Community Edition</div>
+            <h3>Starling EX Community</h3>
+            <p>Self-host package: Starling Lite facade + Heron Ops + ShrikeOps, one Helm chart. Planned CNCF donation — not a CNCF project until accepted.</p>
+            <a class="ext" href="https://github.com/warble-tech/warble-army" rel="noopener">github.com/warble-tech/warble-army</a>
+          </article>
+        </div>
+        <p class="note-box">
+          Try MCP live at <a href="https://mcp.warbleoss.org/mcp">mcp.warbleoss.org/mcp</a>.
+          Avirka remains the self-hostable model used inside the stack. Frakma-X is the forming Linux Foundation wing for platform / LLMOps — commercial FRAKMA stays at frakma.io.
+        </p>
+      </div>
+
+      <div class="wrap section" style="padding-top:0">
+        <div class="section-head">
+          <p class="eyebrow">Closed</p>
+          <h2>Enterprise versions — private beta</h2>
+          <p>Optional. Never required for Community Edition. Access is invite-only.</p>
         </div>
         <div class="grid">
-          <article class="card">
-            <div class="pill">Open source</div>
-            <h3>Frakma</h3>
-            <p>The engine that turns your runbooks into automated actions. Built for engineers who want to try it themselves first.</p>
-          </article>
-          <article class="card">
-            <div class="pill">Open source</div>
-            <h3>Avirka</h3>
-            <p>A smaller, self-hostable model — about 10× cheaper than frontier models. One GPU. Offline and air-gapped when you need it.</p>
-          </article>
-          <article class="card">
-            <div class="pill">Managed</div>
+          <article class="card card-locked">
+            <div class="pill pill-warn">Private beta</div>
             <h3>Warble Cloud</h3>
-            <p>We run Frakma + Avirka for you, with a dashboard, support, and a path from free tier to enterprise.</p>
+            <p>Multi-tenant control plane, billing, and the managed flock. We run it so you do not have to operate CE yourself.</p>
           </article>
-          <article class="card">
-            <div class="pill">Enterprise</div>
-            <h3>Phronix</h3>
-            <p>Your own private, fine-tuned model plus an uptime guarantee — for teams with strict SLA or compliance needs.</p>
+          <article class="card card-locked">
+            <div class="pill pill-warn">Private beta</div>
+            <h3>Managed FRAKMA</h3>
+            <p>Platform / LLMOps on your cluster, operated by us. Separate story from Starling EX Community. Not an LF project until chartered.</p>
+          </article>
+          <article class="card card-locked">
+            <div class="pill pill-warn">Private beta</div>
+            <h3>Phronix + GitHub App</h3>
+            <p>Private model / SLA add-on and GitHub App distribution. Same commercial boundary as warbleoss.org: CE stays free and self-hosted.</p>
+          </article>
+          <article class="card card-locked">
+            <div class="pill pill-warn">Request access</div>
+            <h3>Want in?</h3>
+            <p>Tell us cluster, constraint, and whether you need managed flock or managed platform. We reply if there is a beta seat.</p>
+            <a class="ext" href="/contact" data-link>Request private beta →</a>
           </article>
         </div>
       </div>
@@ -90,29 +123,36 @@
       <div class="wrap section">
         <div class="section-head">
           <p class="eyebrow">How it works</p>
-          <h2>Observe. Reason. Act. Stay inside the lines you draw.</h2>
-          <p>No rewrite of your automation. Bring the runbooks you already trust.</p>
+          <h2>Scan. Observe. Propose. Apply only inside policy.</h2>
+          <p>Community Edition is a complete self-host path. Enterprise adds tenancy, billing, and a managed control plane — not a different agent loop.</p>
         </div>
         <div class="steps">
           <div class="step">
             <div class="num">1</div>
             <div>
-              <h3>Observe</h3>
-              <p>Signals from Kubernetes, logs, and your existing tools — without shipping production data to a third-party brain.</p>
+              <h3>Scan — ShrikeOps</h3>
+              <p>Misconfigs, CVEs, and deprecated APIs before they ship. Open source, runs in CI or on the cluster.</p>
             </div>
           </div>
           <div class="step">
             <div class="num">2</div>
             <div>
-              <h3>Reason</h3>
-              <p>Avirka proposes a next step from your playbooks. A critic path checks the plan before anything changes.</p>
+              <h3>Observe — Heron Ops</h3>
+              <p>Live pods, logs, events, and metrics over MCP. Any agent IDE. No write required for the first path.</p>
             </div>
           </div>
           <div class="step">
             <div class="num">3</div>
             <div>
-              <h3>Act</h3>
-              <p>Frakma executes only what policy allows. You keep approval gates, audit trails, and the option to self-host.</p>
+              <h3>Coordinate — Starling EX CE</h3>
+              <p>One Helm chart. Propose next steps; optional guarded apply. No license phone-home.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">4</div>
+            <div>
+              <h3>Enterprise — private beta</h3>
+              <p>Warble Cloud multi-tenant plane, GitHub App, or managed FRAKMA. Same flock underneath. Closed while we take a small set of design partners.</p>
             </div>
           </div>
         </div>
@@ -123,10 +163,10 @@
       <div class="wrap section">
         <div class="contact-layout">
           <div>
-            <p class="eyebrow">Contact</p>
-            <h2>Tell us what you want to know.</h2>
-            <p class="lede">We use this form to follow up with a concise brief — not a newsletter blast. Typical reply is within one business day.</p>
-            <p class="form-note">Prefer email? Write to <a href="mailto:contact@warblecloud.com">contact@warblecloud.com</a>.</p>
+            <p class="eyebrow">Private beta</p>
+            <h2>Request access or get CE help.</h2>
+            <p class="lede">Community Edition is public. Enterprise seats are limited. Use this form for beta, partnership, or a concise CE brief.</p>
+            <p class="form-note">OSS install: <a href="https://warbleoss.org">warbleoss.org</a>. Email: <a href="mailto:contact@warblecloud.com">contact@warblecloud.com</a>.</p>
           </div>
           <form class="form" id="lead-form" novalidate>
             <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" />
@@ -147,19 +187,20 @@
               <input id="role" name="role" maxlength="120" placeholder="SRE, platform, CTO…" />
             </div>
             <div class="field">
-              <label for="interest">What do you want more information on?</label>
+              <label for="interest">What do you want?</label>
               <select id="interest" name="interest">
-                <option value="warble-cloud">Warble Cloud (managed)</option>
-                <option value="frakma">Frakma (open source engine)</option>
+                <option value="private-beta">Private beta — Warble Cloud / managed FRAKMA</option>
+                <option value="starling-ex-ce">Starling EX Community (self-host)</option>
+                <option value="shrikeops">ShrikeOps</option>
+                <option value="heron-ops">Heron Ops</option>
                 <option value="avirka">Avirka (self-hosted model)</option>
-                <option value="phronix">Phronix (enterprise / SLA)</option>
                 <option value="partnership">Partnership or reseller</option>
                 <option value="other">Something else</option>
               </select>
             </div>
             <div class="field">
               <label for="message">Context (optional)</label>
-              <textarea id="message" name="message" maxlength="2000" placeholder="Cluster size, constraints, timeline…"></textarea>
+              <textarea id="message" name="message" maxlength="2000" placeholder="Cluster (kind / GKE / EKS / AKS), constraint, timeline…"></textarea>
             </div>
             <button class="btn btn-primary" type="submit" id="lead-submit">Send request</button>
             <p class="form-status" id="lead-status" role="status" aria-live="polite"></p>
@@ -172,9 +213,11 @@
 
   <footer class="site-footer">
     <div class="wrap footer-row">
-      <div>© <span id="year"></span> Warble Cloud. All rights reserved.</div>
+      <div>© <span id="year"></span> Warble Cloud. Community Edition stays free.</div>
       <div>
-        <a href="https://warblecloud.com" rel="noopener">warblecloud.com</a>
+        <a href="https://warbleoss.org" rel="noopener">warbleoss.org</a>
+        ·
+        <a href="https://github.com/warble-tech/warble-army" rel="noopener">warble-army</a>
         ·
         <a href="mailto:contact@warblecloud.com">contact@warblecloud.com</a>
       </div>

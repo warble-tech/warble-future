@@ -5,7 +5,7 @@ Public marketing SPA for the next chapter of the Warble stack, plus a `/api/lead
 ## Pages
 
 - `/` — Home
-- `/products` — Frakma, Avirka, Warble Cloud, Phronix
+- `/products` — ShrikeOps, Heron Ops, Starling EX CE; enterprise private beta
 - `/how-it-works` — Observe → Reason → Act
 - `/contact` — Lead capture form
 

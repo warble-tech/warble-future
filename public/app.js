@@ -6,10 +6,10 @@ const routes = {
 };
 
 const titles = {
-  home: "Warble Future — Safe auto-remediation for operations",
-  products: "Products — Warble Future",
-  how: "How it works — Warble Future",
-  contact: "Request more information — Warble Future",
+  home: "Warble — Open-source Kubernetes agent ops",
+  products: "Products — Warble OSS + private beta",
+  how: "How it works — Scan, observe, propose",
+  contact: "Request private beta — Warble",
 };
 
 function pathOf(href) {
