@@ -24,7 +24,7 @@ document.addEventListener("click", (event) => {
   const url = new URL(link.href, window.location.origin);
   if (url.origin !== window.location.origin) return;
   event.preventDefault();
-  history.pushState({}, "", url.pathname);
+  history.pushState({}, "", url.pathname + window.location.search);
   show(url.pathname);
 });
 

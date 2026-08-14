@@ -4,44 +4,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Enterprise software, built peacefully.</title>
-  <meta name="description" content="WarbleCloud LLC (US) and ChirpStack LLP (India). Lean-small products. Tiny vLLM. September pipeline." />
+  <meta name="description" content="WarbleCloud LLC (US) and ChirpStack LLP (India). Lean-small products. Tiny vLLM." />
   <link rel="icon" href="/logos/warble_bird_logo.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="wrap nav">
       <a class="brand" href="/" data-link>
-        <img src="/logos/warble_bird_logo.svg" alt="" width="28" height="28" />
+        <img src="/logos/warble_bird_logo.svg" alt="" width="28" height="28" aria-hidden="true" />
         <span data-brand-short>WarbleCloud</span>
       </a>
       <button class="menu-toggle" type="button" id="menu-toggle" aria-label="Open menu">Menu</button>
-      <nav class="nav-links" id="nav-links">
+      <nav class="nav-links" id="nav-links" aria-label="Primary">
         <a href="/" data-link data-nav="home">Home</a>
         <a href="/products" data-link data-nav="products">Products</a>
         <a href="/contact" data-link data-nav="contact">Contact</a>
-        <a class="wc-btn wc-btn-primary wc-btn-sm" href="/contact" data-link data-cta>Contact</a>
+        <a class="wc-btn wc-btn-primary wc-btn-sm" href="/contact" data-link data-cta>Write to us</a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section id="page-home" class="page">
       <div class="hero">
         <div class="wc-hero-glow" aria-hidden="true"></div>
         <div class="wrap hero-inner">
           <p class="wc-eyebrow"><span class="dot" aria-hidden="true"></span><span data-brand-name>WarbleCloud</span></p>
-          <p class="tagline" data-tagline>Enterprise software, built peacefully.</p>
-          <h1 data-hero-h1>Product company. Lean small.</h1>
+          <p class="tagline" data-tagline></p>
+          <h1 data-hero-h1></h1>
           <p class="lede" data-brand-lede></p>
           <div class="actions">
-            <a class="wc-btn wc-btn-primary" href="/contact" data-link data-cta>Contact</a>
+            <a class="wc-btn wc-btn-primary" href="/contact" data-link data-cta>Write to us</a>
             <a class="wc-btn wc-btn-ghost" href="https://warbleoss.org" rel="noopener">Community Edition</a>
           </div>
-          <p class="legal-line" data-legal>WarbleCloud LLC (US) · ChirpStack LLP (India)</p>
+          <p class="legal-line" data-legal></p>
         </div>
       </div>
     </section>
@@ -50,8 +51,8 @@
       <div class="wrap section">
         <div class="section-head">
           <p class="wc-section-label">Products</p>
-          <h2>Four doors. One company pair.</h2>
-          <p>CE is open. The rest is beta, evaluation, or lean development. WarbleCloud LLC (US) and ChirpStack LLP (India).</p>
+          <h2>What is open, and what is not.</h2>
+          <p>Community Edition runs today. The rest is closed beta, foundation evaluation, or lean development.</p>
         </div>
         <div class="wc-engines-grid cols-2" data-products-grid></div>
       </div>
@@ -63,7 +64,7 @@
           <div>
             <p class="wc-section-label">Contact</p>
             <h2>Name the product.</h2>
-            <p class="lede">Not a services intake. <a href="mailto:contact@warblecloud.com">contact@warblecloud.com</a></p>
+            <p class="lede">This is a product inbox, not a services intake. <a href="mailto:contact@warblecloud.com">contact@warblecloud.com</a></p>
             <p class="form-note" data-legal></p>
           </div>
           <form class="form" id="lead-form" novalidate>
@@ -77,7 +78,7 @@
               <input class="wc-input" id="email" name="email" type="email" required maxlength="254" autocomplete="email" />
             </div>
             <div class="field">
-              <label class="wc-input-label" for="interest">What</label>
+              <label class="wc-input-label" for="interest">What you need</label>
               <select class="wc-input" id="interest" name="interest"></select>
             </div>
             <div class="field">
@@ -94,16 +95,7 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      <div class="legal-entities">
-        <span>
-          <img src="/logos/warble_bird_logo.svg" alt="" width="20" height="20" />
-          WarbleCloud LLC · United States
-        </span>
-        <span>
-          <img src="/logos/chirpstack_icon.svg" alt="" width="20" height="20" />
-          ChirpStack LLP · India
-        </span>
-      </div>
+      <div class="legal-entities" data-entities></div>
       <div class="footer-row">
         <div>© <span id="year"></span> <span data-legal></span></div>
         <div>
